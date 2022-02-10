@@ -1,0 +1,53 @@
+.comandos{
+    display: flex;
+    justify-content: flex-end;
+    margin-left: 50px;
+}
+.contenido{
+    display:flex;
+    justify-content: space-evenly;
+}
+.btn2{
+    background-color: orange;
+    border: 2px solid black;
+    margin: 10px 20px;
+}
+.derecha{
+    border:2px solid black;
+    text-align: center;
+    background-color: rgb(48, 53, 58);
+    color:white;
+    margin: 0px 30px;
+}
+.izquierda{
+    border:2px solid black;
+    text-align: center;
+    background-color: rgb(48, 53, 58);
+    color:white;
+    margin: 0px 30px;
+    width: 400px;
+}
+h1{
+    color:rgb(238, 180, 74);
+    
+}
+.section{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 10px 200px;
+}
+.btn{
+    background-color: orange;
+    border: 2px solid black;
+    margin: 10px 200px;
+}
+.btn3{
+    background-color: orange;
+    border: 2px solid black;
+    margin: 10px 10px;
+}
+.tiulos{
+    display:flex;
+    justify-content: center;
+}

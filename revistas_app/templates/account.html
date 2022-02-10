@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Subscriptions</title>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/sty_account.css') }}">
+    </head>
+    <body>
+        <div class="contenedortotal">
+            <div class="comandos">
+                <form action="/addmagazine">
+                    <button class="btn2">
+                        Add magazines
+                    </button>
+                </form>
+                <form action="/dashboard">
+                    <button class="btn2">
+                        Dashboard
+                    </button>
+                </form>
+                <form action="/logout">
+                    <button class="btn2">
+                        Logout
+                    </button>
+                </form>
+            </div>
+            <div class="contenido">
+                <div class="derecha">
+                    <h1>Update User</h1>
+                    <form action="/update/{{user}}" method='POST'>
+                        <div class="section">
+                            <label for="nombre">
+                                Nombre:
+                            </label>
+                            <input type="text" id="nombre" name="nombre">
+                        </div>
+                        <div class="section">
+                            <label for="apellido">
+                                Apellido:
+                            </label>
+                            <input type="text" id="apellido" name="apellido">
+                        </div>
+                        <div class="section">
+                            <label for="email">
+                                Email:
+                            </label>
+                            <input type="text" id="email" name="email">
+                        </div>
+                        <button type="submit" class="btn">Update</button>
+                    </form>
+                </div>
+                <div class="izquierda">
+                    <h1>
+                        {{user}}'s magazines
+                    </h1>
+                    <div class="tiulos">
+                        {%for user in usuario%}
+                            <p>{{user.titulo}}</p>
+                            <form action="/delete/{{user.id}}" method="POST">
+                                <button class="btn3">Delete</button>
+                            </form>
+                        {%endfor%}
+                    </div>
+                    <div class="error">
+                        {% with mensajes = get_flashed_messages(category_filter=["login"])%}
+                            {%for mensaje in mensajes:%}
+                                <p>
+                                    {{mensaje}}
+                                </p>
+                            {%endfor%}
+                        {%endwith%}
+                    </div> 
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

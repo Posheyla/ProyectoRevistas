@@ -1,0 +1,27 @@
+.barranav{
+    display: flex;
+}
+.barranav h1{
+    flex:2;
+}
+.comandos{
+    flex:1;
+}
+.comandos{
+    display: flex;
+    justify-content: flex-end;
+    margin-left: 50px;
+}
+.btn{
+    background-color: orange;
+    border: 2px solid black;
+    margin: 10px 10px;
+}
+.contenedorrevistas{
+    margin: 10px;
+    border: 2px solid black;
+    color: chocolate;
+}
+.contenedorrevistas{
+    display:flex;
+}

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Subcriptions</title>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/sty_dashboard.css') }}">
+    </head>
+    <body>
+        <div class="contenedortotal">
+            <div class="barranav">
+                <h1>Welcome {{nombre}} !</h1>
+                <div class="comandos">
+                    <form action="/addmagazine">
+                        <button class="btn">
+                            Add Magazine
+                        </button>
+                    </form>
+                    <form action="/{{nombre}}/account">
+                        <button class="btn">
+                            Account
+                        </button>
+                    </form>
+                    <form action="/logout">
+                        <button class="btn">
+                            Logout
+                        </button>
+                    </form>
+                </div>
+            </div>
+            <div class="extra">
+                Magazines
+            </div>
+            {%for revista in resultado:%}
+                <div class="contenedorrevistas">
+                    <form action="/show/{{revista.id}}">
+                        <button class="btn">{{revista.titulo}}</button>
+                    </form>
+                    <p>added by {{revista.autor}}</p>
+                </div>
+            {%endfor%}
+        </div>
+    </body>
+</html>

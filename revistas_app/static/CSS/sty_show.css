@@ -1,0 +1,10 @@
+.comandos{
+    display: flex;
+    justify-content: flex-end;
+    margin-left: 50px;
+}
+.btn{
+    background-color: orange;
+    border: 2px solid black;
+    margin: 10px 10px;
+}
